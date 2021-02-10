@@ -86,4 +86,8 @@ public class User {
 	public void setLoans(List<Loan> loans) {
 		this.loans = loans;
 	}
+	
+	public void addLoan(Loan loan) {
+		loans.add(loan);
+	}
 }

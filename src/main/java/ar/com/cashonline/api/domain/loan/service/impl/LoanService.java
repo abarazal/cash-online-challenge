@@ -47,7 +47,7 @@ public class LoanService implements ILoanService {
 					pagedLoan.getTotalElements());
 		}
 		
-		return new PagedResult<>(Collections.emptyList(), page, 0, 0L);
+		return new PagedResult<>(Collections.emptyList(), 0, 0, 0L);
 	}
 
 }

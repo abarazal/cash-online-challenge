@@ -12,7 +12,6 @@ public class UserDTO {
 	private String lastName;
 	private List<LoanDTO> loans;
 
-	
 	public Long getId() {
 		return id;
 	}
