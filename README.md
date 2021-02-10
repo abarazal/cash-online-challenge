@@ -22,8 +22,18 @@ mvn clean package
 mvn spring-boot:run
 ```
 
+o
+
+```
+./java -jar target/api-rest-1.0.0.jar 
+```
+
+La base de datos es H2 y se creará en memoria (esquema y datos) al levantar el aplicativo.
+
 
 ## API :paperclip:
+
+Ver colección de Postman.
 
 
 ## Autor :man:

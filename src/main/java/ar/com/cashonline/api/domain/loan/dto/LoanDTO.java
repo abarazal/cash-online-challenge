@@ -1,9 +1,11 @@
 package ar.com.cashonline.api.domain.loan.dto;
 
+import java.math.BigDecimal;
+
 public class LoanDTO {
 
 	private Long id;
-	private Double total;
+	private BigDecimal total;
 	private Long userId;
 	
 	
@@ -15,11 +17,11 @@ public class LoanDTO {
 		this.id = id;
 	}
 	
-	public Double getTotal() {
+	public BigDecimal getTotal() {
 		return total;
 	}
 	
-	public void setTotal(Double total) {
+	public void setTotal(BigDecimal total) {
 		this.total = total;
 	}
 	

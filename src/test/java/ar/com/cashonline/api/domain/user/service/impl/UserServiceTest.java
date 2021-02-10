@@ -3,6 +3,7 @@ package ar.com.cashonline.api.domain.user.service.impl;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
@@ -88,7 +89,7 @@ class UserServiceTest {
 	private Loan createMockLoan() {
 		Loan loan = new Loan();
 		loan.setId(14L);
-		loan.setTotal(13000.00);
+		loan.setTotal(new BigDecimal(13000.00));
 		return loan;
 	}
 

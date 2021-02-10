@@ -1,5 +1,7 @@
 package ar.com.cashonline.api.domain.loan.entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
 
 import ar.com.cashonline.api.domain.user.entity.User;
 
@@ -21,8 +24,9 @@ public class Loan {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "total", precision = 17, scale = 2)
-	private Double total;
+	@Digits(integer=17, fraction=2)
+	@Column(name = "total", precision = 17, scale = 2, columnDefinition="Decimal(17,2)")
+	private BigDecimal total;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", nullable = false)
@@ -37,11 +41,11 @@ public class Loan {
 		this.id = id;
 	}
 
-	public Double getTotal() {
+	public BigDecimal getTotal() {
 		return total;
 	}
 
-	public void setTotal(Double total) {
+	public void setTotal(BigDecimal total) {
 		this.total = total;
 	}
 
