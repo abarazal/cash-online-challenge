@@ -33,8 +33,7 @@ La base de datos es H2 y se creará en memoria (esquema y datos) al levantar el 
 
 ## API :paperclip:
 
-Ver colección de Postman.
-
+[Ver colección de Postman](cashOnlineApiRest.postman_collection.json)
 
 ## Autor :man:
 Agustín Barazal
