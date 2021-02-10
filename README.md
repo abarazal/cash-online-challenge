@@ -25,7 +25,7 @@ mvn spring-boot:run
 o
 
 ```
-./java -jar target/api-rest-1.0.0.jar 
+java -jar target/api-rest-1.0.0.jar 
 ```
 
 La base de datos es H2 y se creará en memoria (esquema y datos) al levantar el aplicativo.
@@ -34,6 +34,7 @@ La base de datos es H2 y se creará en memoria (esquema y datos) al levantar el 
 ## API :paperclip:
 
 [Ver colección de Postman](cashOnlineApiRest.postman_collection.json)
+
 
 ## Autor :man:
 Agustín Barazal
