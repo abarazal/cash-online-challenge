@@ -26,12 +26,14 @@ public class UserService implements IUserService {
 		return modelMapper.map(user, UserDTO.class);
 	}
 
+	@Override
 	public UserDTO createUser(UserRequest userRequest) {
 		User user = new User(userRequest.getEmail(), userRequest.getFirstName(), userRequest.getLastName());
 		User newUser = userRepository.save(user);
 		return modelMapper.map(newUser, UserDTO.class);
 	}
 
+	@Override
 	public void deleteUser(Long id) {
 		User user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "id", id));
 		userRepository.delete(user);

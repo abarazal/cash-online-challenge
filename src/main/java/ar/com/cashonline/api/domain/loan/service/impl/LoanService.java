@@ -25,6 +25,7 @@ public class LoanService implements ILoanService {
 	@Autowired
 	private ModelMapper modelMapper;
 
+	@Override
 	public PagedResult<LoanDTO> getAllLoans(Integer page, Integer size, Long userId) {
 		PageRequest pageable = PageRequest.of(page, size);
 
