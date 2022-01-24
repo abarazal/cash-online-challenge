@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -19,11 +18,14 @@ import ar.com.cashonline.api.domain.loan.service.ILoanService;
 @Service
 public class LoanService implements ILoanService {
 
-	@Autowired
-	private LoanRepository loanRepository;
+	private final LoanRepository loanRepository;
+	private final ModelMapper modelMapper;
 
-	@Autowired
-	private ModelMapper modelMapper;
+	public LoanService(LoanRepository loanRepository,
+					   ModelMapper modelMapper) {
+		this.loanRepository = loanRepository;
+		this.modelMapper = modelMapper;
+	}
 
 	@Override
 	public PagedResult<LoanDTO> getAllLoans(Integer page, Integer size, Long userId) {

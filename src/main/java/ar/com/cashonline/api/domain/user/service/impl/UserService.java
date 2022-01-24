@@ -1,7 +1,6 @@
 package ar.com.cashonline.api.domain.user.service.impl;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.com.cashonline.api.domain.user.dto.UserDTO;
@@ -14,11 +13,14 @@ import ar.com.cashonline.api.exception.ResourceNotFoundException;
 @Service
 public class UserService implements IUserService {
 
-	@Autowired
-	private UserRepository userRepository;
+	private final ModelMapper modelMapper;
+	private final UserRepository userRepository;
 
-	@Autowired
-	private ModelMapper modelMapper;
+	public UserService(ModelMapper modelMapper,
+					   UserRepository userRepository) {
+		this.userRepository = userRepository;
+		this.modelMapper = modelMapper;
+	}
 
 	@Override
 	public UserDTO findUserById(Long id) {
