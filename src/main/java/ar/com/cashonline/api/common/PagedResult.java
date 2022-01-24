@@ -4,8 +4,8 @@ import java.util.List;
 
 public class PagedResult<T> {
 
-	private List<T> items;
-	private Paging paging;
+	private final List<T> items;
+	private final Paging paging;
 
 	public PagedResult(List<T> items, Integer page, Integer size, Long total) {
 		this.items = items;

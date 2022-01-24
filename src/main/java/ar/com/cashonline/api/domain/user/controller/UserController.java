@@ -2,7 +2,6 @@ package ar.com.cashonline.api.domain.user.controller;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +20,12 @@ import ar.com.cashonline.api.domain.user.service.impl.UserService;
 @RequestMapping("/api/users")
 public class UserController {
 
-	@Autowired
-	private UserService userService;
-	
+	private final UserService userService;
+
+	public UserController(UserService userService) {
+		this.userService = userService;
+	}
+
 	@GetMapping("/{id}")
 	public UserDTO findUserById(@PathVariable Long id) {
 		return userService.findUserById(id);

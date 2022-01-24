@@ -2,9 +2,9 @@ package ar.com.cashonline.api.common;
 
 public class Paging {
 
-	private Integer page;
-	private Integer size;
-	private Long total;
+	private final Integer page;
+	private final Integer size;
+	private final Long total;
 
 	public Paging(Integer page, Integer size, Long total) {
 		this.page = page;
